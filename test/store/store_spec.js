@@ -2,7 +2,7 @@ import {expect} from 'chai';
 
 import { setPolls }  from '../../src/actions';
 import configureStore from '../../src/store';
-import polls from '../../src/utils/examples';
+import { POLLS as polls } from '../../src/utils/examples';
 
 describe('store', () => {
 
@@ -15,7 +15,7 @@ describe('store', () => {
     });
 
     store.dispatch(setPolls(polls));
-    
+
     expect(store.getState()).to.eql({ polls });
 
   });

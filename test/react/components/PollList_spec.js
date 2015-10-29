@@ -4,7 +4,7 @@ import TestUtils from 'react-addons-test-utils';
 import {expect} from 'chai';
 
 import PollList from '../../../src/components/PollList';
-import polls from '../../../src/utils/examples';
+import { POLLS as polls } from '../../../src/utils/examples';
 import init from '../../../src/utils/init';
 import { addPoll } from '../../../src/actions';
 
@@ -33,12 +33,12 @@ describe('PollList', () => {
 
     const pollList = scryRenderedDOMComponentsWithClass(component, 'list-group');
     const pollItems = scryRenderedDOMComponentsWithClass(component, 'list-group-item');
-    
+
     expect(pollList.length).to.equal(1);
     expect(pollItems.length).to.equal(polls.length);
 
     polls.forEach( (poll, index)  => {
-    	expect(poll.title).to.equal(pollItems[index].textContent);
+      expect(poll.title).to.equal(pollItems[index].textContent);
     });
   });
 
@@ -55,7 +55,7 @@ describe('PollList', () => {
   });
 
 it('should obtain the poll title when add poll button is clicked', () => {
-    
+
     const expectedTitle = 'TV Series';
     let obtainedTitle = null;
 
@@ -66,14 +66,14 @@ it('should obtain the poll title when add poll button is clicked', () => {
     ReactDOM.findDOMNode(component.refs.title).value = expectedTitle;
 
     const addPullButton = findRenderedDOMComponentWithTag(component, 'button');
-    
+
     Simulate.click(addPullButton);
-    
+
     expect(obtainedTitle).to.equal(expectedTitle);
   });
 
   it('should add the poll title to the store when add poll button is clicked', () => {
-    
+
     const store = init();
     const initPolls = store.getState().polls;
     const expectedTitle = 'TV Series';
@@ -85,7 +85,7 @@ it('should obtain the poll title when add poll button is clicked', () => {
     ReactDOM.findDOMNode(component.refs.title).value = expectedTitle;
 
     const addPullButton = findRenderedDOMComponentWithTag(component, 'button');
-    
+
     Simulate.click(addPullButton);
 
     const actualPolls = store.getState().polls;

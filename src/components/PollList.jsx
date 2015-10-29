@@ -45,6 +45,6 @@ PollList.propTypes = {
   onAddPullClick: PropTypes.func.isRequired
 };
 
-PollList.defaultProps = { 
+PollList.defaultProps = {
   polls: []
 };

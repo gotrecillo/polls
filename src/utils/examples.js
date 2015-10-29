@@ -1,4 +1,4 @@
-const POLLS = [ 
+export const POLLS = [
   {
     id: '0',
     title: 'Spanish Political Parties',
@@ -11,4 +11,7 @@ const POLLS = [
   }
 ];
 
-export default POLLS;
+export const ENTRIES = {
+    '0': ['PP', 'PSOE', 'Ciudadanos', 'Podemos']
+};
+

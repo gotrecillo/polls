@@ -6,9 +6,8 @@ export default class App extends Component {
   render() {
     return (
       <div>
-  	    <PollListContainer/>
+        <PollListContainer/>
       </div>
     );
   }
-  
 }

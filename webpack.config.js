@@ -1,5 +1,7 @@
-var webpack = require('webpack');
-var friendlyFormatter = require('eslint-friendly-formatter');
+'use strict';
+
+let webpack = require('webpack');
+let friendlyFormatter = require('eslint-friendly-formatter');
 
 module.exports = {
   entry: [
